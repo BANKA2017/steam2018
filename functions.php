@@ -61,3 +61,40 @@ function joinzone($token,$zone_position){
 	curl_close($ch);
 	return $d;
 }
+function leavegame($token,$gameid){
+	/*跑路*/
+	$ch=curl_init();
+	curl_setopt($ch,CURLOPT_URL,'https://community.steam-api.com/IMiniGameService/LeaveGame/v0001/');
+	curl_setopt($ch,CURLOPT_POST,true);
+	curl_setopt($ch,CURLOPT_POSTFIELDS,array("access_token"=>$token,"gameid"=>$gameid));
+	curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.78 Safari/537.36');
+	curl_setopt($ch,CURLOPT_REFERER,'https://steamcommunity.com/saliengame/play');
+	curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+	$e=curl_exec($ch);
+	curl_close($ch);
+	return $e;
+}
+function getplanets(){
+	/*获取所有星球信息*/
+	$ch=curl_init();
+	curl_setopt($ch,CURLOPT_URL,'https://community.steam-api.com/ITerritoryControlMinigameService/GetPlanets/v0001/?active_only=1&language=schinese');
+	curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.78 Safari/537.36');
+	curl_setopt($ch,CURLOPT_REFERER,'https://steamcommunity.com/saliengame/play');
+	curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+	$f=curl_exec($ch);
+	curl_close($ch);
+	return $f;
+}
+function joinplanet($token,$id){
+	/*跑路*/
+	$ch=curl_init();
+	curl_setopt($ch,CURLOPT_URL,'https://community.steam-api.com/ITerritoryControlMinigameService/JoinPlanet/v0001/');
+	curl_setopt($ch,CURLOPT_POST,true);
+	curl_setopt($ch,CURLOPT_POSTFIELDS,array("access_token"=>$token,"id"=>$id));
+	curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.78 Safari/537.36');
+	curl_setopt($ch,CURLOPT_REFERER,'https://steamcommunity.com/saliengame/play');
+	curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+	$e=curl_exec($ch);
+	curl_close($ch);
+	return $e;
+}

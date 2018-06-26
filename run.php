@@ -73,7 +73,7 @@ echo '[warning][' . time() . ']['.$token.'][reportscore : error'."]\n";
 continue;
 }
 else{
-echo '[info][' . time() . ']['.$token.']'."[score_add:".($d["response"]["new_score"]-$d["response"]["old_score"])."][active_planet:".$b["response"]["active_planet"]."][clan:".$b["response"]["clan_info"]["name"].']['.$b["response"]["score"] . '/'. $b["response"]["next_level_score"] ."][level:".$d["response"]["new_level"]."]\n";
+echo '[info][' . time() . ']['.$token.']'."[score_add:".($d["response"]["new_score"]-$d["response"]["old_score"])."][active_planet:".$b["response"]["active_planet"]."][clan:".$b["response"]["clan_info"]["name"].']['.$d["response"]["new_score"] . '/'. $d["response"]["next_level_score"] ."][level:".$d["response"]["new_level"]."]\n";
 //old_level,new_level,next_level_score
 }
 if($default_hardtype != 3){

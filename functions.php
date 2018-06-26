@@ -34,7 +34,7 @@ function reportscore($token,$hardtype){
 			$score=1200;
 		break;
 		case 3:
-			$score=2360;
+			$score=2400;
 		break;
 	}
 	$ch=curl_init();
